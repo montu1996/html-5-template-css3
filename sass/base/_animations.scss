@@ -1,0 +1,71 @@
+@keyframes logoboxAnimation {
+    0% {
+        transform: translateX(100%) rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem) rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+    
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem) rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-180deg);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0) rotate(0deg);
+    }
+}
+
+@keyframes logoScale {
+    100% {
+        opacity: 1;
+        transform: scale(2,2);
+        animation-play-state: paused;
+    }
+}
+
+@keyframes moveInBotton {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

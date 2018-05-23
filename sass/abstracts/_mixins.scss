@@ -1,0 +1,47 @@
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Media Query Manager
+/*
+0-600px     = phone
+600-900px   = Tablet Potrait
+900-1200px  = Tablet landsacpe
+1200-1800px = Desktop [ Normal Style Applied ]
+1800px+     = Big Desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- desk
+- big-desk
+
+ORDER: base + typography > general layout + grid > page layout > component
+
+1em = 16px
+*/
+@mixin respond( $breankpoint ) {
+    
+    // map over breakpoints and use value of passed in size
+    @if $breankpoint != big-desk {
+        @media screen and (max-width: map-get($breakpoints, $breankpoint)) {
+            @content
+        }
+    } @else {
+        @media screen and (min-width: map-get($breakpoints, $breankpoint)) {
+            @content
+        }
+    }
+}

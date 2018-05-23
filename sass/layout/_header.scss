@@ -1,0 +1,54 @@
+.header {
+    
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+        url(../img/hero-small.jpg);
+    background-position: top;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* x y cordinate */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* x y cordinate */
+    height: 95vh; /* 95% of the view port */
+    position: relative;
+
+    // IMG
+    @media ( min-resolution: 192dpi ) and ( min-width: 97.5em ), ( min-width: 125em ) { // Apple Retina Screen
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-primary-light, 0.8), 
+            rgba($color-primary-dark, 0.8)), 
+            url(../img/hero.jpg);
+    }
+
+    @include respond( phone ) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); /* x y cordinate */
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); /* x y cordinate */
+    }
+
+    &__logo-box {
+        animation: logoboxAnimation 1s ease-out;
+        animation-delay: 0.75s;
+        animation-fill-mode: backwards;
+        left: 4rem;
+        position: absolute;
+        top: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__logo-box:hover &__logo {
+        animation: logoScale 1s;
+        cursor: pointer;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%,-50%);
+    }
+}
